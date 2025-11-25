@@ -46,6 +46,33 @@ int main() {
                 }
                 break;
 
+            case 2: { // Remover item
+                if (total == 0) {
+                    printf("A mochila está vazia!\n");
+                } else {
+                    char nomeRemover[30];
+                    int encontrado = 0;
+
+                    printf("Digite o nome do item a ser removido: ");
+                    scanf("%s", nomeRemover);
+
+                    for (int i = 0; i < total; i++) {
+                        if (strcmp(mochila[i].nome, nomeRemover) == 0) {
+                            // Sobrescreve o item removido com o último da lista
+                            mochila[i] = mochila[total - 1];
+                            total--;
+                            encontrado = 1;
+                            printf("Item removido com sucesso!\n");
+                            break;
+                        }
+                    }
+
+                    if (!encontrado) {
+                        printf("Item não encontrado!\n");
+                    }
+                }
+                break;
+            }
 
    
 
