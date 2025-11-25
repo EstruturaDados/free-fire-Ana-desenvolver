@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-
 #define MAX_ITENS 10
+
+// Código da Ilha – Edição Free Fire
+// Nível: Novato
 
 // Estrutura que representa um item da mochila
 typedef struct {
@@ -10,22 +12,44 @@ typedef struct {
     int quantidade;
 } Item;
 
-// Código da Ilha – Edição Free Fire
-// Nível: Novato
-
-
 int main() {
-    // Menu principal com opções:
-    // 1. Adicionar um item
-    // 2. Remover um item
-    // 3. Listar todos os itens
-    // 4. Ordenar os itens por critério (nome, tipo, prioridade)
-    // 5. Realizar busca binária por nome
-    // 0. Sair
+    Item mochila[MAX_ITENS];
+    int total = 0;  // quantidade de itens atualmente na mochila
+    int opcao;
 
-    // A estrutura switch trata cada opção chamando a função correspondente.
-    // A ordenação e busca binária exigem que os dados estejam bem organizados.
+    do {
+        printf("\n=====  MOCHILA DE SOBREVIVÊNCIA =====\n");
+        printf("1 - Adicionar item\n");
+        printf("2 - Remover item pelo nome\n");
+        printf("3 - Listar itens\n");
+        printf("0 - Sair\n");
+        printf("Escolha uma opcao: ");
+        scanf("%d", &opcao);
 
+ switch(opcao) {
+
+            case 1: // Adicionar item
+                if (total >= MAX_ITENS) {
+                    printf("A mochila está cheia! Não é possível adicionar mais itens.\n");
+                } else {
+                    printf("Digite o nome do item: ");
+                    scanf("%s", mochila[total].nome);
+
+                    printf("Digite o tipo do item: ");
+                    scanf("%s", mochila[total].tipo);
+
+                    printf("Digite a quantidade: ");
+                    scanf("%d", &mochila[total].quantidade);
+
+                    total++;
+                    printf("Item adicionado com sucesso!\n");
+                }
+                break;
+
+
+   
+
+    
     return 0;
 }
 
