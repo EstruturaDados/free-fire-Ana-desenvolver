@@ -1,12 +1,18 @@
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-#include <stdbool.h>
+
+#define MAX_ITENS 10
+
+// Estrutura que representa um item da mochila
+typedef struct {
+    char nome[30];
+    char tipo[20];
+    int quantidade;
+} Item;
 
 // Código da Ilha – Edição Free Fire
-// Nível: Mestre
-// Este programa simula o gerenciamento avançado de uma mochila com componentes coletados durante a fuga de uma ilha.
-// Ele introduz ordenação com critérios e busca binária para otimizar a gestão dos recursos.
+// Nível: Novato
+
 
 int main() {
     // Menu principal com opções:
